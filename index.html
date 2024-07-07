@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geopardy</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('Image2.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-grow: 1;
+            align-items: center;
+            margin: 50px 0;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            width: 30%;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .card h2 {
+            margin: 0 0 20px;
+        }
+
+        .options button {
+            background-color: #00bfff;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+            margin: 10px auto;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100px;
+        }
+
+        .options button:hover {
+            background-color: #009acd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Geopardy</h1>
+    </header>
+    <div class="container">
+        <div class="card">
+            <h2>Biology</h2>
+            <div class="options">
+                <button data-question="What is the powerhouse of the cell?" data-answer="Mitochondria">1m</button>
+                <button data-question="How do Carbon Dioxide and water move in and out of the cell?" data-answer="Diffusion and Osmosis">2m</button>
+                <button data-question="Name 3 places in the plant cell where there is distinct DNA" data-answer="Nucleus, Mitochondria, Plastids">3m</button>
+                <button data-question="What are the functions of ER?" data-answer="Protien Manufacture, Lipid Manufacture, Membrane Biogenesis and Transportation of materials">4m</button>
+                <button data-question="What are Lysosomes known as? Why?" data-answer="They are known as 'Suicide Bags of the cell' since they contain strong digestive enzymes which can break down almost any organic substance">5m</button>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Chemistry</h2>
+            <div class="options">
+                <button data-question="What is the chemical name for water?" data-answer="Hydrogen dioxide">1m</button>
+                <button data-question="Does a suspension show tyndall effect? If yes, under what circumstances?" data-answer="Yes, But only when the mixture is stired.">2m</button>
+                <button data-question="What are the three main characteristics of particles?" data-answer="1. They have intermolecular spaces between them. 2. They are in continuous motion. 3. They attract each other.">3m</button>
+                <button data-question="What are 4 factors which affect evaporation?" data-answer="1. Surface Area 2. Temperature 3. Humidity 4. Wind speed">4m</button>
+                <button data-question="Which kind of mixture shows Tyndall Effect? And why?" data-answer="Colloidal mixtures show Tyndall effect. It is beacuase they are not too small to allow light with minimum deviation nor too big to block the path of the light. They are just the right size(between 1nm and 1000 nm)to scatter the light rays. ">5m</button>
+            </div>
+        </div>
+        <div class="card">
+            <h2>Physics</h2>
+            <div class="options">
+                <button data-question="What is relation of distance with respect to time under constant acceleration?" data-answer="Distance is directly proportional to square of the time taken, under constant acceleration.">1m</button>
+                <button data-question="A bus stops while skidding towards its right side. What is the type of inertia experienced by the person sitting inside the bus?" data-answer="Inertia of direction as well as Inertia of motion">2m</button>
+                <button data-question="Explain why the phenomenon of Inertia occurs." data-answer="It is due to the tendency of any object to resist a change in its motion.">3m</button>
+                <button data-question="A person hits the wall while skating. The action of the person and the reaction by the wall gets cancelled out. Is this possible? If not, Why so?" data-answer="Both the forces do not get cancelled out because the Force of ACTION and the Force of REACTION act on different bodies.">4m</button>
+                <button data-question="Can an accelerated object travel with uniform/constant speed? If yes, explain and name this type of motion." data-answer="Yes, it is possible. This can occur when there is a continuous change in the direction of the motion. This is called Uniform Circular Motion">5m</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.options button').forEach(button => {
+            button.addEventListener('click', () => {
+                const question = button.getAttribute('data-question');
+                const answer = button.getAttribute('data-answer');
+
+                if (confirm(question)) {
+                    alert(answer);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
